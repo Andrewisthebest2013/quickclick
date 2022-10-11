@@ -1,8 +1,46 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>Redirecting to New Site</title>
-<meta http-equiv="refresh" content="0; URL=https://bazzerdv.github.io/quickclick/">
-<link rel="canonical" href="https://bazzerdv.github.io/quickclick/">
+<script>
+  function dictToURI(dict) {
+    var str = [];
+    for(var p in dict){
+      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(dict[p]));
+    }
+    return str.join("&");
+  }
+  if (localStorage.getItem('QuickClickData') != null){
+    loaded_data = localStorage.getItem('QuickClickData')
+    let data = JSON.parse(loaded_data)
+    let urlData = {
+      one:Math.floor(data.clicksdata.nbrOwned),
+      two:data.autoclickersdata.clickers.number,
+      three:data.prestigedata.prestiged,
+      four:data.autoclickersdata.trainedclickers.number,
+      five:data.clicksdata.mouseUpgrades,
+      six:data.autoclickersdata.spammers.number,
+      seven:data.animationsdata.currentAnimation,
+      eight:data.autoclickersdata.tappers.number,
+      nine:data.prestigedata.bonus,
+      ten:data.autoclickersdata.vibrationengineers.number,
+      eleven:Math.floor(data.runtimedata.currentrun),
+      twelve:data.autoclickersdata.collegedropouts.number,
+      thirteen:data.prestigedata.prestigePoints,
+      fourteen:data.autoclickersdata.babies.number,
+      fifteen:data.autoclickersdata.bossbabies.number,
+      sixteen:data.autoclickersdata.unemployedengineers.number,
+      seventeen:Math.floor(data.runtimedata.fastestrun),
+      eighteen:data.autoclickersdata.testers.number,
+      nineteen:data.autoclickersdata.hackers.number,
+      twenty:data.autoclickersdata.developers.number
+    }
+    document.write('<meta http-equiv="refresh" content="0; URL=https://bazzerdv.github.io/quickclick/?' + dictToURI(urlData) + '">')
+    document.write('<link rel="canonical" href="https://bazzerdv.github.io/quickclick/?' + dictToURI(urlData) + '">')
+  } else {
+    document.write('<meta http-equiv="refresh" content="0; URL=https://bazzerdv.github.io/quickclick/">')
+    document.write('<link rel="canonical" href="https://bazzerdv.github.io/quickclick/">')
+  }
+</script>
 
 <html>
 <body>
@@ -11,3 +49,24 @@
   </p>
 </body>
 </html>
+one:{variable:'nbrOwned', obj:'clicks'},
+    two:{variable:'clickers', obj:'autoclickers'},
+    three:{variable:'prestiged', obj:'prestige'},
+    four:{variable:'trainedclickers', obj:'autoclickers'},
+    five:{variable:'mouseUpgrades', obj:'clicks'},
+    six:{variable:'spammers', obj:'autoclickers'},
+    seven:{variable:'currentAnimation', obj:'animations'},
+    eight:{variable:'tappers', obj:'autoclickers'},
+    nine:{variable:'bonus', obj:'prestige'},
+    ten:{variable:'vibrationengineers', obj:'autoclickers'},
+    eleven:{variable:'prestiged', obj:'prestige'},
+    twelve:{variable:'collegedropouts', obj:'autoclickers'},
+    thirteen:{variable:'prestigePoints', obj:'prestige'},
+    fourteen:{variable:'babies', obj:'autoclickers'},
+    fifteen:{variable:'bossbabies', obj:'autoclickers'},
+    sixteen:{variable:'unemployedengineers', obj:'autoclickers'},
+    seventeen:{variable:'fastestrun', obj:'runtime'},
+    eighteen:{variable:'testers', obj:'autoclickers'},
+    nineteen:{variable:'hackers', obj:'autoclickers'},
+    twenty:{variable:'developers', obj:'autoclickers'},
+    twentyone:{variable:'currentrun', obj:'runtime'}
