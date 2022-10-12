@@ -23,7 +23,7 @@
       eight:data.autoclickersdata.tappers.number,
       nine:data.prestigedata.bonus,
       ten:data.autoclickersdata.vibrationengineers.number,
-      eleven:Math.floor(data.runtimedata.currentrun),
+      eleven: Math.floor(data.runtimedata.currentrun),
       twelve:data.autoclickersdata.collegedropouts.number,
       thirteen:data.prestigedata.prestigePoints,
       fourteen:data.autoclickersdata.babies.number,
@@ -44,29 +44,14 @@
 
 <html>
 <body>
-  <p>
-    If you are not redirected in the next 5s, click <a href="https://bazzerdv.github.io/quickclick/">here</a> to try again.
-  </p>
+  <script>
+    document.write('<p>')
+    if (localStorage.getItem('QuickClickData') != null){
+      document.write('If you are not redirected in the next 5s, click <a href="https://bazzerdv.github.io/quickclick/?' + dictToURI(urlData) + '">here</a> to try again.')
+    } else {
+      document.write('If you are not redirected in the next 5s, click <a href="https://bazzerdv.github.io/quickclick/">here</a> to try again.')
+    }
+    document.write('</p>')  
+  </script>
 </body>
 </html>
-one:{variable:'nbrOwned', obj:'clicks'},
-    two:{variable:'clickers', obj:'autoclickers'},
-    three:{variable:'prestiged', obj:'prestige'},
-    four:{variable:'trainedclickers', obj:'autoclickers'},
-    five:{variable:'mouseUpgrades', obj:'clicks'},
-    six:{variable:'spammers', obj:'autoclickers'},
-    seven:{variable:'currentAnimation', obj:'animations'},
-    eight:{variable:'tappers', obj:'autoclickers'},
-    nine:{variable:'bonus', obj:'prestige'},
-    ten:{variable:'vibrationengineers', obj:'autoclickers'},
-    eleven:{variable:'prestiged', obj:'prestige'},
-    twelve:{variable:'collegedropouts', obj:'autoclickers'},
-    thirteen:{variable:'prestigePoints', obj:'prestige'},
-    fourteen:{variable:'babies', obj:'autoclickers'},
-    fifteen:{variable:'bossbabies', obj:'autoclickers'},
-    sixteen:{variable:'unemployedengineers', obj:'autoclickers'},
-    seventeen:{variable:'fastestrun', obj:'runtime'},
-    eighteen:{variable:'testers', obj:'autoclickers'},
-    nineteen:{variable:'hackers', obj:'autoclickers'},
-    twenty:{variable:'developers', obj:'autoclickers'},
-    twentyone:{variable:'currentrun', obj:'runtime'}
