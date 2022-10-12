@@ -12,28 +12,39 @@
   if (localStorage.getItem('QuickClickData') != null){
     loaded_data = localStorage.getItem('QuickClickData')
     let data = JSON.parse(loaded_data)
-    let urlData = {
-      one:Math.floor(data.clicksdata.nbrOwned),
-      two:data.autoclickersdata.clickers.number,
-      three:data.prestigedata.prestiged,
-      four:data.autoclickersdata.trainedclickers.number,
-      five:data.clicksdata.mouseUpgrades,
-      six:data.autoclickersdata.spammers.number,
-      seven:data.animationsdata.currentAnimation,
-      eight:data.autoclickersdata.tappers.number,
-      nine:data.prestigedata.bonus,
-      ten:data.autoclickersdata.vibrationengineers.number,
-      eleven: Math.floor(data.runtimedata.currentrun),
-      twelve:data.autoclickersdata.collegedropouts.number,
-      thirteen:data.prestigedata.prestigePoints,
-      fourteen:data.autoclickersdata.babies.number,
-      fifteen:data.autoclickersdata.bossbabies.number,
-      sixteen:data.autoclickersdata.unemployedengineers.number,
-      seventeen:Math.floor(data.runtimedata.fastestrun),
-      eighteen:data.autoclickersdata.testers.number,
-      nineteen:data.autoclickersdata.hackers.number,
-      twenty:data.autoclickersdata.developers.number
+    
+    let urlData = {}
+    if ('clicksdata' in data){
+      urlData.one = Math.floor(data.clicksdata.nbrOwned)
+      urlData.five = data.clicksdata.mouseUpgrades)
     }
+    if ('autoclickersdata' in data){
+      urlData.two = data.autoclickersdata.clickers.number
+      urlData.four = data.autoclickersdata.trainedclickers.number
+      urlData.six = data.autoclickersdata.spammers.number
+      urlData.eight = data.autoclickersdata.tappers.number
+      urlData.ten = data.autoclickersdata.vibrationengineers.number
+      urlData.twelve = data.autoclickersdata.collegedropouts.number
+      urlData.fourteen = data.autoclickersdata.babies.number
+      urlData.fifteen = data.autoclickersdata.bossbabies.number
+      urlData.sixteen = data.autoclickersdata.unemployedengineers.number
+      urlData.eighteen = data.autoclickersdata.testers.number
+      urlData.nineteen = data.autoclickersdata.hackers.number
+      urlData.twenty = data.autoclickersdata.developers.number
+    }
+    if ('animationsdata' in data){
+      urlData.seven = data.animationsdata.currentAnimation
+    }
+    if ('prestigedata' in data){
+      urlData.three = data.prestigedata.prestiged
+      urlData.nine = data.prestigedata.bonus
+      urlData.thirteen = data.prestigedata.prestigePoints
+    }
+    if ('runtimedata' in data){
+      urlData.eleven = Math.floor(data.runtimedata.currentrun)
+      urlData.seventeen = Math.floor(data.runtimedata.fastestrun)
+    }
+
     document.write('<meta http-equiv="refresh" content="0; URL=https://bazzerdv.github.io/quickclick/?' + dictToURI(urlData) + '">')
     document.write('<link rel="canonical" href="https://bazzerdv.github.io/quickclick/?' + dictToURI(urlData) + '">')
   } else {
