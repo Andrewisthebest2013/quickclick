@@ -16,7 +16,6 @@
     let data = JSON.parse(loaded_data)
     
     var urlData = {}
-    alert(urlData)
     if ('clicksdata' in data){
       urlData.one = Math.floor(data.clicksdata.nbrOwned)
       urlData.five = data.clicksdata.mouseUpgrades
