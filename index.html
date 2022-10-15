@@ -15,7 +15,7 @@
     loaded_data = localStorage.getItem('QuickClickData')
     let data = JSON.parse(loaded_data)
     
-    let urlData = {}
+    var urlData = {}
     alert(urlData)
     if ('clicksdata' in data){
       urlData.one = Math.floor(data.clicksdata.nbrOwned)
